@@ -1,0 +1,5 @@
+package com.kshitiz.blog.controller;
+
+public class CategoryController {
+
+}

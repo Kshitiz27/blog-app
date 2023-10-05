@@ -1,0 +1,30 @@
+package com.kshitiz.blog.payloads;
+
+import java.util.Date;
+
+import com.kshitiz.blog.entities.Category;
+import com.kshitiz.blog.entities.User;
+
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+@AllArgsConstructor
+@Setter
+@Getter
+public class PostDto {
+
+	private String title;
+	
+	private String content;
+	
+private String imgName;
+	
+	private Date addedDate;
+	
+	private Category category;
+	
+	private User user;
+}

@@ -1,0 +1,5 @@
+package com.kshitiz.blog.exceptions;
+
+public class GlobalExceptionHandler {
+
+}

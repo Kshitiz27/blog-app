@@ -1,0 +1,19 @@
+package com.kshitiz.blog.payloads;
+
+import jakarta.persistence.Column;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Setter
+@Getter
+public class CategoryDto {
+
+	private int catId;
+	private String catTitle;
+	private String catDesc;
+	
+}

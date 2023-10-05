@@ -1,0 +1,37 @@
+package com.kshitiz.blog.payloads;
+
+
+	import jakarta.validation.constraints.NotNull;
+	import lombok.Getter;
+	import lombok.NoArgsConstructor;
+	import lombok.Setter;
+	
+	
+	
+	@NoArgsConstructor
+	
+	@Setter
+	@Getter
+	public class UserDto {
+		private int id;
+		
+		@NotNull
+		private String name;
+		
+		@jakarta.validation.constraints.Email
+		private String email;
+		
+		@NotNull
+		private String password;
+		
+		@NotNull
+		private String about;
+		
+		
+		
+		
+		
+		
+	}
+	
+

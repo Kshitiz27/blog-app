@@ -1,0 +1,78 @@
+package com.kshitiz.blog.services.impl;
+
+import java.util.List;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+
+import com.kshitiz.blog.entities.Category;
+import com.kshitiz.blog.entities.User;
+import com.kshitiz.blog.exceptions.ResourceNotFoundExcpetion;
+import com.kshitiz.blog.payloads.CategoryDto;
+import com.kshitiz.blog.payloads.UserDto;
+import com.kshitiz.blog.repositories.CategoryRepo;
+import com.kshitiz.blog.services.CategoryServices;
+
+public class CategoryServiceImpl implements CategoryServices {
+	
+	@Autowired
+	private CategoryRepo catRepo;
+	
+	@Autowired
+	private ModelMapper mdlmap;
+
+	@Override
+	public ResponseEntity<CategoryDto> createCat(CategoryDto catdto) {
+		
+		Category cat = this.dtotocat(catdto);
+		Category savedCat = this.catRepo.save(cat);
+		return this.cattodto(savedCat);
+		
+	}
+
+	@Override
+	public CategoryDto updateCat(CategoryDto catdto, Integer catId) {
+		
+		Category cat = this.catRepo.findById(catId)
+				.orElseThrow(()-> new ResourceNotFoundExcpetion("Category","Id",catId));
+		
+		cat.setCatTitle(catdto.getCatTitle());
+		cat.setCatDesc(catdto.getCatDesc());
+		
+		Category updateCat = this.catRepo.save(cat);
+		 return this.cattodto(updateCat);
+		
+
+		
+	}
+
+	@Override
+	public void dltCat(Integer catId) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public CategoryDto getCat(Integer catId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<CategoryDto> getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public Category dtotocat(CategoryDto catdto) {
+		Category cat = this.mdlmap.map(catdto,Category.class);
+		return cat;
+	}
+	
+	public CategoryDto cattodto(Category cat) {
+		CategoryDto catdto = this.mdlmap.map(cat, CategoryDto.class);
+		return catdto;
+	}
+
+}

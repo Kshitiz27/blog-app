@@ -1,0 +1,5 @@
+package com.kshitiz.blog.repositories;
+
+public interface UserRepo {
+
+}

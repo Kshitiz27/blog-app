@@ -1,0 +1,18 @@
+package com.kshitiz.blog.entities;
+
+public class Post {
+	
+	private int postId;
+	
+	private String title;
+	
+	private String content;
+	
+	private String imgName;
+	
+	private String addedDate;
+	
+	private Category category;
+	
+	private User user;
+}
