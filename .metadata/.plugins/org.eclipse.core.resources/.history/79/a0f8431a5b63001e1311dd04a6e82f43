@@ -1,0 +1,5 @@
+package com.kshitiz.blog.payloads;
+
+public class CategoryDto {
+
+}

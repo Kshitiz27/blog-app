@@ -1,0 +1,5 @@
+package com.kshitiz.blog.services;
+
+public interface UserService {
+
+}

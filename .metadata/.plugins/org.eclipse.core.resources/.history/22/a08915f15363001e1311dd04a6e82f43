@@ -1,0 +1,38 @@
+package com.kshitiz.blog.payloads;
+
+
+	import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+	import lombok.Getter;
+	import lombok.NoArgsConstructor;
+	import lombok.Setter;
+	
+	
+	
+	@NoArgsConstructor
+	
+	@Setter
+	@Getter
+	public class UserDto {
+		private int id;
+		
+		@NotEmpty(message="Enter Valid Name")
+		private String name;
+		
+		@jakarta.validation.constraints.Email(message="Enter Valid email")
+		private String email;
+		
+		@NotNull(message="Enter Valid password")
+		private String password;
+		
+		@NotNull(message="Enter Valid about")
+		private String about;
+		
+		
+		
+		
+		
+		
+	}
+	
+

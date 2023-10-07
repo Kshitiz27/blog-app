@@ -1,0 +1,33 @@
+package com.kshitiz.blog.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+
+import com.kshitiz.blog.payloads.CategoryDto;
+import com.kshitiz.blog.repositories.CategoryRepo;
+
+public interface CategoryServices {
+
+	//create
+	
+	CategoryDto createCat(CategoryDto catdto);
+	
+	//update
+	
+	CategoryDto updateCat(CategoryDto catdto, Integer catId);
+	
+	//delete
+	
+	void dltCat(Integer catId);
+	
+	//get by id
+	
+	CategoryDto getCat(Integer catId);
+	
+	//get all
+	
+	List<CategoryDto> getAll();
+	
+}

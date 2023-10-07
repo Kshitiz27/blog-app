@@ -1,0 +1,39 @@
+package com.kshitiz.blog.payloads;
+
+
+
+	import org.hibernate.annotations.NotFound;
+
+import lombok.Getter;
+	import lombok.NoArgsConstructor;
+	import lombok.Setter;
+	
+	
+	
+	@NoArgsConstructor
+	
+	@Setter
+	@Getter
+	public class UserDto {
+		private int id;
+		
+		@NotFound
+		private String name;
+		
+		
+		private String email;
+		
+		@NotFound
+		private String password;
+		
+		@NotFound
+		private String about;
+		
+		
+		
+		
+		
+		
+	}
+	
+
